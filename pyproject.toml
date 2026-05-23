@@ -1,0 +1,28 @@
+[project]
+name = "pulse"
+version = "0.1.0"
+description = "Economic indicator ingestion pipeline"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv>=1.2.2",
+    "requests>=2.34.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.14",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["ingestion"]
